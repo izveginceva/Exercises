@@ -247,8 +247,18 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
-       
+        
+        if ((outsideMode == false) && (n >= 1 && n <= 10))
+        {
+            return true;
+        }
+        else if (outsideMode == true && (n <= 1 || n >= 10))
+        {
+            return true;
+        }
+        else
+            return false;
+
     }
 
     /// <summary>
@@ -261,7 +271,12 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        throw new NotImplementedException();
+        if (n % 11 == 0 || n % 11 == 1)
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
     /// <summary>
@@ -274,7 +289,12 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        throw new NotImplementedException();
+        if (n % 20 == 1 || n % 20 == 2)
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
     /// <summary>
@@ -287,7 +307,17 @@ public class Logic1
     /// </summary>
     public bool Old35(int n)
     {
-        throw new NotImplementedException();
+        if (n % 3 == 0 && n % 5 == 0)
+        {
+            return false;
+        }
+
+        else if (n % 3 == 0 || n % 5 == 0)
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
     /// <summary>
@@ -301,7 +331,14 @@ public class Logic1
     /// </summary>
     public bool Less20(int n)
     {
-        throw new NotImplementedException();
+        int k = 0;
+        if (n % 20 == 18 || n % 20 == 19)
+        { 
+            return true;
+        }
+            
+        else
+            return false;
     }
 
     /// <summary>
@@ -315,7 +352,13 @@ public class Logic1
     /// </summary>
     public bool NearTen(int num)
     {
-        throw new NotImplementedException();
+        if (num % 10 >= 8 || num % 10 <= 2)
+        {
+            return true;
+        }
+        else
+            return false;
+        
     }
 
     /// <summary>
@@ -328,7 +371,16 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        throw new NotImplementedException();
+
+        int sum = a + b;
+
+        if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19))
+        {
+            return 19;
+        }
+
+       else
+        return sum;
     }
 
     /// <summary>
@@ -342,7 +394,16 @@ public class Logic1
     /// </summary>
     public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
     {
-        throw new NotImplementedException();
+        if (isAsleep)
+        {
+            return false;
+        }
+        if (isMorning)
+        {
+            return isMom;
+        }
+        else 
+            return true;
     }
 
     /// <summary>
@@ -358,7 +419,17 @@ public class Logic1
     /// </summary>
     public int TeaParty(int tea, int candy)
     {
-        throw new NotImplementedException();
+        if (tea < 5 || candy < 5)
+        {
+            return 0;
+        }
+        if ((tea >= 2 * candy) || (candy >= 2* tea))
+        {
+            return 2;
+        }
+
+        else
+            return 1;
     }
 
     /// <summary>
@@ -373,6 +444,7 @@ public class Logic1
     public string FizzString(string str)
     {
         throw new NotImplementedException();
+
     }
 
     /// <summary>
