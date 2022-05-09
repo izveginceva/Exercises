@@ -109,7 +109,27 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
     {
-        throw new NotImplementedException();
+
+        // 1. Ja tajā dienā ir dzimšanas diena, tad ātrums visos gadījumos var būt par 5 lielāks
+
+        if (isBirthday)
+        {
+            speed -= 5;
+        }
+        // 2. Ja ātrums ir 60 vai mazāk, tad rezultāts ir 0
+        if (speed <= 60)
+        {
+            return 0; 
+        }
+
+        // 2. Ja ātrums ir 81 vai vairāk, tad rezultāts ir 2
+        if (speed >= 81)
+        {
+            return 2;
+        }
+
+        // 3. Ja ātrums ir 61 līdz 80 (ieksiatot),tad rezultāts ir 1
+        return 1;
     }
 
     /// <summary>
@@ -122,7 +142,18 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        // 1. mainīgo a+b vērība ir sum
+        int sum = a + b;
+
+        // 2. Ja a+b summa ir robežās no 10-19, tad atgriežam 20
+
+        if (sum >=10 && sum <=19)
+        {
+            return 20;
+        }
+
+        // 3. Visos citos gadījumos atgriežam skaitļu summu
+        return sum;
     }
 
     /// <summary>
@@ -138,7 +169,34 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        //1. Nodefinē modinātāja laikus ja ir darba diena, brīvdiena vai atvaļinājums
+        string weekday = "7:00";
+        string weekend = "10:00";
+        string off = "off";
+
+        // 2. Ja ir nedēļas nogale, tad modinātājs skan 10:00
+        if (day == 0 || day == 6)
+        {
+        
+        // 3. bet ja ir atvaļinājums, tad nedēļas nogalē modinātājs ir izslēgts
+            if (vacation)
+            {
+                return off;
+
+            }
+
+            return weekend;
+        }
+
+        // 4. Atvaļinājuma pārējās dienās, modinātājs darbojas kā nedēļas nogalē
+        if (vacation)
+        {
+            return weekend;
+        }
+
+        // 5. Visos pārējos gadījumos modinātājs skan kā darba dienās
+        return weekday;
+
     }
 
     /// <summary>
@@ -152,7 +210,30 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        // 1. Ja a vai b ir 6, tad atgriežam true
+        if (a == 6 || b == 6)
+        {
+            return true;
+        }
+        // 2. Ja a+b ir vienāds ar 6, tad atgriežam true
+        if (a + b == 6)
+        {
+            return true;
+        }
+        // 3. Ja a-b ir vienāds ar 6, tad atgriežam true
+        int subtracted = a - b;
+        int diff = Math.Abs(subtracted);
+        if (diff == 6)
+        {
+            return true;
+        }
+
+        if (a - b == 6)
+        {
+            return true;
+        }
+        // 4. Visos pārējos gadījumos atgriežam false
+        return false;
     }
 
     /// <summary>
@@ -167,6 +248,7 @@ public class Logic1
     public bool In1To10(int n, bool outsideMode)
     {
         throw new NotImplementedException();
+       
     }
 
     /// <summary>
