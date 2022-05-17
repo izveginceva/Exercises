@@ -154,7 +154,10 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] result = { nums[2], nums[1], nums[0] };
+
+        return result;
+
     }
 
     /// <summary>
@@ -167,7 +170,19 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+        int first = nums[0];
+        int last = nums[nums.Length - 1];
+        int biggest = first;
+
+        if (first < last)
+        {
+            biggest = last;
+        }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = biggest;
+        }
+        return nums;
     }
 
     /// <summary>
@@ -181,7 +196,20 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+        int x = nums.Length;
+
+        if (x == 0)
+        {
+            return 0;
+        }
+        else if (x == 1)
+        {
+            return nums[0];
+        }
+        else
+        {
+            return nums[0] + nums[1];
+        }
     }
 
     /// <summary>
@@ -194,20 +222,23 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int[] mids = { a[1], b[1] };
+        return mids;
+
     }
 
-    /// <summary>
-    /// Given an array of ints, return a new array length 2 containing the first and last elements
-    /// from the original array. The original array will be length 1 or more.
-    /// 
-    /// makeEnds([1, 2, 3]) → [1, 3]
-    /// makeEnds([1, 2, 3, 4]) → [1, 4]
-    /// makeEnds([7, 4, 6, 2]) → [7, 2]
-    /// </summary>
-    public int[] MakeEnds(int[] nums)
+        /// <summary>
+        /// Given an array of ints, return a new array length 2 containing the first and last elements
+        /// from the original array. The original array will be length 1 or more.
+        /// 
+        /// makeEnds([1, 2, 3]) → [1, 3]
+        /// makeEnds([1, 2, 3, 4]) → [1, 4]
+        /// makeEnds([7, 4, 6, 2]) → [7, 2]
+        /// </summary>
+        public int[] MakeEnds(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] temp = { nums[0], nums[nums.Length - 1] };
+        return temp;
     }
 
     /// <summary>
@@ -219,7 +250,9 @@ public class Array1
     /// </summary>
     public bool Has23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums[0] == 2 || nums[0] == 3)
+            return true;
+        return (nums[1] == 2 || nums[1] == 3);
     }
 
     /// <summary>
@@ -231,7 +264,9 @@ public class Array1
     /// </summary>
     public bool No23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums[0] == 2 || nums[0] == 3)
+            return false;
+        return !(nums[1] == 2 || nums[1] == 3);
     }
 
     /// <summary>
@@ -245,7 +280,10 @@ public class Array1
     /// </summary>
     public int[] MakeLast(int[] nums)
     {
-        throw new NotImplementedException();
+        int len = nums.Length * 2;
+        int[] dubsArr = new int[len];
+        dubsArr[len - 1] = nums[nums.Length - 1];
+        return dubsArr;
     }
 
     /// <summary>
@@ -258,7 +296,13 @@ public class Array1
     /// </summary>
     public bool Double23(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 2)
+        {
+            if (nums[0] == 2 && nums[1] == 2)
+                return true;
+            return (nums[0] == 3 && nums[1] == 3);
+        }
+        return false;
     }
 
     /// <summary>
@@ -271,7 +315,17 @@ public class Array1
     /// </summary>
     public int[] Fix23(int[] nums)
     {
-        throw new NotImplementedException();
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == 2)
+            {
+                if (nums[i + 1] == 3)
+                {
+                    nums[i + 1] = 0;
+                }
+            }
+        }
+        return nums;
     }
 
     /// <summary>
