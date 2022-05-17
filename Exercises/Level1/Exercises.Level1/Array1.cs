@@ -338,7 +338,22 @@ public class Array1
     /// </summary>
     public int Start1(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int one = 0;
+        if (a.Length > 0)
+        {
+            if (a[0] == 1)
+            {
+                one += 1;
+            }
+        }
+        if (b.Length > 0)
+        {
+            if (b[0] == 1)
+            {
+                one += 1;
+            }
+        }
+        return one;
     }
 
     /// <summary>
@@ -351,7 +366,13 @@ public class Array1
     /// </summary>
     public int[] BiggerTwo(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int aSum = a[0] + a[1];
+        int bSum = b[0] + b[1];
+        if (aSum > bSum || aSum == bSum)
+        {
+            return a;
+        }
+        return b;
     }
 
     /// <summary>
