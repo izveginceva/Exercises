@@ -61,8 +61,34 @@ public class Array2
     /// </summary>
     public int Sum13(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+
+        int sum = 0;
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] != 13)
+            {
+                sum += nums[i];
+            }
+            else if (nums[i] == 13)
+            {
+                nums[i] = 0;
+
+                if (i + 1 < nums.Length)
+                {
+                    nums[i + 1] = 0;
+                }
+            }
+        }
+
+        return sum;
+
     }
+   
 
     /// <summary>
     /// Return the sum of the numbers in the array, except ignore sections of numbers starting
